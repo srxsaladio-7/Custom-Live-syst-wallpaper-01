@@ -63,7 +63,7 @@ jobs:
       # ============================================================
       - name: Create project directories
         run: |
-          mkdir -p app/src/main/java/com/srxsaladio7/nissangtrlivewallpaper
+          mkdir -p app/src/main/java/com/srxsaladio7/ngtrcustomlivewallpaper03
           mkdir -p app/src/main/res/values
           mkdir -p app/src/main/res/xml
           mkdir -p app/src/main/res/raw
@@ -350,7 +350,7 @@ jobs:
       # ============================================================
       - name: Write GtrWallpaperService.java
         run: |
-          cat > app/src/main/java/com/srxsaladio7/nissangtrlivewallpaper/GtrWallpaperService.java <<'EOF'
+          cat > app/src/main/java/com/srxsaladio7/ngtrcustomlivewallpaper03/GtrWallpaperService.java <<'EOF'
           package com.srxsaladio7.ngtrcustomlivewallpaper03;
 
           import android.media.MediaPlayer;
