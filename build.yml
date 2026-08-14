@@ -158,7 +158,7 @@ jobs:
               }
           }
 
-          rootProject.name = "Custom-Live-syst-wallpaper-01"
+          rootProject.name = "Custom-Live-syst-wallpaper-03"
 
           include(":app")
           EOF
@@ -200,14 +200,14 @@ jobs:
           }
 
           android {
-              namespace "com.srxsaladio7.nissangtrlivewallpaper"
+              namespace "com.srxsaladio7.ngtrcustomlivewallpaper03"
 
               compileSdk 34
 
               defaultConfig {
-                  applicationId "com.srxsaladio7.nissangtrlivewallpaper"
+                  applicationId "com.srxsaladio7.ngtrcustomlivewallpaper03"
 
-                  minSdk 22
+                  minSdk 21
                   targetSdk 22
 
                   versionCode 1
@@ -255,8 +255,8 @@ jobs:
               package="com.srxsaladio7.ngtrcustomlivewallpaper03">
 
               <uses-sdk
-                  android:minSdkVersion="22"
-                  android:targetSdkVersion="23" />
+                  android:minSdkVersion="21"
+                  android:targetSdkVersion="22" />
 
               <!-- Tell Android this package supplies a live wallpaper. -->
               <uses-feature
@@ -308,7 +308,7 @@ jobs:
           <resources>
 
               <string name="app_name">
-                  Nissan GTR Cool Live Wallpaper
+                   CustomLiveWallpaper03
               </string>
 
               <string name="wallpaper_name">
@@ -351,7 +351,7 @@ jobs:
       - name: Write GtrWallpaperService.java
         run: |
           cat > app/src/main/java/com/srxsaladio7/nissangtrlivewallpaper/GtrWallpaperService.java <<'EOF'
-          package com.srxsaladio7.nissangtrlivewallpaper;
+          package com.srxsaladio7.ngtrcustomlivewallpaper03;
 
           import android.media.MediaPlayer;
           import android.service.wallpaper.WallpaperService;
@@ -619,6 +619,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Nissan-GTR-Cool-Live-Wallpaper
+          name: CustomLiveWallpaper-03
           path: app/build/outputs/apk/release/app-release.apk
           retention-days: 30
