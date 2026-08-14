@@ -190,6 +190,24 @@ jobs:
 
 
       # ============================================================
+      # Generate signing keystore for this test build
+      # ============================================================
+      - name: Generate signing keystore
+        run: |
+          keytool -genkeypair -v \
+            -keystore gtr_test_release.jks \
+            -storetype JKS \
+            -alias gtr_test_key \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -storepass gtr_test_store_pass \
+            -keypass gtr_test_key_pass \
+            -dname "CN=CustomLiveWallpaper03, OU=Wallpaper, O=SrXSaladio7, C=BD" \
+            -noprompt
+
+            
+      # ============================================================
       # 12. app/build.gradle
       # ============================================================
       - name: Write app/build.gradle
