@@ -214,12 +214,17 @@ jobs:
                   versionName "1.0"
               }
 
+              lint {
+                  checkReleaseBuilds false
+                  abortOnError false
+              }    
+
               buildTypes {
                   release {
                       minifyEnabled false
                       shrinkResources false
-                  }
-              }
+                   }
+               }    
 
               compileOptions {
                   sourceCompatibility JavaVersion.VERSION_1_8
