@@ -235,10 +235,23 @@ jobs:
               lint {
                   checkReleaseBuilds false
                   abortOnError false
+              }
+
+              signingConfigs {
+                  release {
+                      storeFile file("../gtr_test_release.jks")
+                      storePassword "gtr_test_store_pass"
+                      keyAlias "gtr_test_key"
+                      keyPassword "gtr_test_key_pass"
+
+                      enableV1Signing true
+                      enableV2Signing false
+                  }
               }    
 
               buildTypes {
                   release {
+                      signingConfig signingConfigs.release
                       minifyEnabled false
                       shrinkResources false
                    }
@@ -275,7 +288,6 @@ jobs:
 
           <manifest
               xmlns:android="http://schemas.android.com/apk/res/android"
-              package="com.srxsaladio7.ngtrcustomlivewallpaper03">
 
               <uses-sdk
                   android:minSdkVersion="21"
